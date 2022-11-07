@@ -1,15 +1,18 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         ArrayList<Integer> integers = new ArrayList<>();
-        int num = 153;
-        int number = num;
+        System.out.print("Введите число: ");
+        int number = Integer.parseInt(scanner.next());
+        int num = number;
         int i;
         int n = 0;
-        while (number >= 1) {
-            i = number % 10;
-            number /= 10;
+        while (num >= 1) {
+            i = num % 10;
+            num /= 10;
             integers.add(i);
             n++;
         }
@@ -17,11 +20,10 @@ public class Main {
         for (Integer j : integers) {
             sum += Math.pow(j, n);
         }
-        System.out.println(sum);
-        if (num == sum) {
-            System.out.println(num + " является числом Амстронга.");
+        if (number == sum) {
+            System.out.println(number + " является числом Амстронга.");
         } else {
-            System.out.println(num + " не является числом Амстронга.");
+            System.out.println(number + " не является числом Амстронга.");
         }
     }
 }
